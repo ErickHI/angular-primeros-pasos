@@ -1,0 +1,12 @@
+<h4>Listado</h4>
+<ul class="list-group">
+  <li *ngFor="let item of characterList; let i = index; let isFirst = first; let isLast = last; let isEven = even"
+  [ngClass]="{'list-group-item-success': isFirst, 'list-group-item-danger': isLast}"
+  class="list-group-item">
+    <div class="d-flex justify-content-between align-items-center">
+      {{ i+1 }}. {{ item.name }} - {{ item.power }}
+
+      <button class="btn btn-danger" (click)="onDeleteCharacter(item.id!)">X</button>
+    </div>
+  </li>
+</ul>
